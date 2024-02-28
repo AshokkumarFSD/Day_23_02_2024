@@ -1,0 +1,46 @@
+
+Title: Demystifying Objects and their Internal Representation in JavaScript
+
+Introduction:
+
+In JavaScript, objects are fundamental entities that play a central role in the language's ecosystem. They serve as containers for key-value pairs, allowing developers to structure data and functionality in a flexible and intuitive manner. However, understanding how objects are internally represented and manipulated is crucial for writing efficient and performant code. In this blog post, we'll delve into the internals of objects in JavaScript, exploring their underlying representation and behavior.
+
+Objects in JavaScript:
+
+In JavaScript, an object is a collection of properties where each property consists of a key-value pair. Objects can be created using object literals, constructors, or the Object.create() method. They are dynamic entities, meaning properties can be added, modified, or deleted at runtime.
+
+// Object literal
+const person = {
+  name: "John",
+  age: 30,
+};
+
+// Constructor
+function Car(make, model) {
+  this.make = make;
+  this.model = model;
+}
+
+const myCar = new Car("Toyota", "Camry");
+
+Internal Representation:
+
+Internally, JavaScript engines implement objects using various data structures, with the most common being hash tables (also known as hash maps or dictionaries). Hash tables provide fast access to values based on their keys, making them well-suited for storing and retrieving properties in JavaScript objects.
+
+When you create an object in JavaScript, the engine allocates memory to store its properties and their corresponding values. Each property is hashed to generate a unique identifier, which is then used to access the property's value efficiently.
+
+
+{
+  "name": "John",
+  "age": 30
+}
+
+n the above example, the properties "name" and "age" are hashed to generate unique keys, allowing for fast retrieval of their respective values.
+
+Property Access and Mutation:
+
+Property access and mutation in JavaScript are typically performed using dot notation (object.property) or bracket notation (object["property"]). When you access or modify a property, the JavaScript engine internally performs a lookup based on the property's key to retrieve or update its value.
+
+console.log(person.name); // Output: John
+person.age = 35;
+console.log(person.age); // Output: 35
